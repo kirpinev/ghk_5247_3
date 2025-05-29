@@ -205,7 +205,7 @@ export const App = () => {
                   }}
                 >
                   <Typography.Text view="primary-small">
-                    +3 участника
+                    3 участника
                   </Typography.Text>
                 </div>
               </div>
