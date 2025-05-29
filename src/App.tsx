@@ -193,7 +193,7 @@ export const App = () => {
             <div>
               <div style={{ display: "flex", alignItems: "center" }}>
                 <Typography.Text view="primary-medium" weight="bold">
-                  Семейная
+                  Семейная подписка
                 </Typography.Text>
 
                 <div
