@@ -12,7 +12,6 @@ import transfer from "./assets/transfer.png";
 import cash from "./assets/cash.png";
 import discount from "./assets/discount.png";
 import family from "./assets/family.png";
-import sunglasses from "./assets/sunglasses.png";
 import { LS, LSKeys } from "./ls";
 import { appSt } from "./style.css";
 import { Gap } from "@alfalab/core-components/gap";
@@ -141,11 +140,24 @@ export const App = () => {
             }}
             onClick={() => setRadioType("radio1")}
           >
-            <Radio checked={radioType === "radio1"} />
             <div>
-              <Typography.Text view="primary-medium" weight="bold">
-                Личная
-              </Typography.Text>
+              <div style={{ display: "flex", alignItems: "center" }}>
+                <Typography.Text view="primary-medium" weight="bold">
+                  Личная
+                </Typography.Text>
+                <div
+                  style={{
+                    marginLeft: "8px",
+                    padding: "4px 8px",
+                    backgroundColor: "#dff8e5",
+                    borderRadius: "0.7rem",
+                  }}
+                >
+                  <Typography.Text view="primary-small">
+                    1 участник
+                  </Typography.Text>
+                </div>
+              </div>
               <Gap size={8} />
               <div
                 style={{
@@ -159,11 +171,12 @@ export const App = () => {
                     0 ₽ первый месяц
                   </Typography.Text>
                   <Typography.Text view="primary-medium" color="secondary">
-                    Дальше — 399 ₽ в месяц
+                    Дальше — 399 ₽ за участника в месяц
                   </Typography.Text>
                 </div>
               </div>
             </div>
+            <Radio checked={radioType === "radio1"} />
           </div>
           <Gap size={16} />
           <div
@@ -177,7 +190,6 @@ export const App = () => {
             }}
             onClick={() => setRadioType("radio2")}
           >
-            <Radio checked={radioType === "radio2"} />
             <div>
               <div style={{ display: "flex", alignItems: "center" }}>
                 <Typography.Text view="primary-medium" weight="bold">
@@ -193,7 +205,7 @@ export const App = () => {
                   }}
                 >
                   <Typography.Text view="primary-small">
-                    233₽ за участника
+                    +2 участника
                   </Typography.Text>
                 </div>
               </div>
@@ -210,30 +222,16 @@ export const App = () => {
                     0 ₽ первый месяц
                   </Typography.Text>
                   <Typography.Text view="primary-medium" color="secondary">
-                    Дальше — 699 ₽ в месяц
+                    Дальше — 233 ₽ за участника в месяц
+                  </Typography.Text>
+                  <Gap size={8} />
+                  <Typography.Text view="primary-small" color="secondary">
+                    Близкие получат все преимущества Альфа-Смарт бесплатно
                   </Typography.Text>
                 </div>
               </div>
             </div>
-          </div>
-          <Gap size={32} />
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: "1rem",
-              border: "1px solid #dff8e5",
-              borderRadius: "1.5rem",
-              padding: "1rem",
-            }}
-          >
-            <img src={sunglasses} alt="" width={24} height={24} />
-            <Typography.Text view="primary-medium">
-              Приглашайте до двух близких — платите всего 233 ₽ за участника
-              (при 3 близких в подписке). Каждый получит все преимущества
-              Альфа-Смарт.
-            </Typography.Text>
+            <Radio checked={radioType === "radio2"} />
           </div>
         </div>
 
